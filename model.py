@@ -4,6 +4,8 @@ import numpy as np
 from tensorflow.keras.models import load_model
 import os
 
+# test
+
 # Load the saved TensorFlow model when the module is imported
 model = load_model(os.path.join('models', 'attentionmodel.h5'))
 
