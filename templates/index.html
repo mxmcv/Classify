@@ -17,8 +17,16 @@
       <input type="submit" value="Upload" />
     </form>
 
+    <!-- Display the result and uploaded image -->
     {% if result %}
     <h3>Result: {{ result }}</h3>
+    {% endif %} {% if filename %}
+    <h4>Uploaded Image:</h4>
+    <img
+      src="{{ url_for('uploaded_file', filename=filename) }}"
+      alt="Uploaded Image"
+      style="max-width: 300px; max-height: 300px"
+    />
     {% endif %}
   </body>
 </html>
