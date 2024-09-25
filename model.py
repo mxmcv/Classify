@@ -41,6 +41,6 @@ def classify_image(image_path):
 
     # Interpret the prediction result
     if yhat > 0.5:
-        return 'Student is sleeping :('
+        return 'Student is sleeping. Wake up!'
     else:
-        return 'Student is paying attention :)'
+        return 'Student is paying attention. Good job!'

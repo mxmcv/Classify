@@ -3,30 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upload Image</title>
+    <title>Image Classification</title>
+
+    <!-- Google Fonts: Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        color: #333;
+      }
+
+      h2 {
+        color: #2c3e50;
+        font-weight: 700;
+      }
+
+      h3 {
+        color: #27ae60;
+      }
+
+      h4 {
+        color: #2980b9;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+      }
+
+      .upload-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input[type='file'] {
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      input[type='submit'] {
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      input[type='submit']:hover {
+        background-color: #1a5276;
+      }
+
+      .result {
+        margin-top: 20px;
+      }
+
+      img {
+        margin-top: 20px;
+        max-width: 100%;
+        border-radius: 8px;
+        border: 2px solid #2980b9;
+      }
+    </style>
   </head>
   <body>
-    <h2>
-      Upload an image to check if the person is sleeping or paying attention:
-    </h2>
+    <div class="container">
+      <h2>Classify</h2>
+      <p>Upload an image of a student to check if they are paying attention:</p>
 
-    <!-- Form to upload an image -->
-    <form action="/" method="POST" enctype="multipart/form-data">
-      <input type="file" name="file" accept="image/*" required />
-      <br /><br />
-      <input type="submit" value="Upload" />
-    </form>
+      <form
+        class="upload-form"
+        action="/"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="file" accept="image/*" required />
+        <input type="submit" value="Upload" />
+      </form>
 
-    <!-- Display the result and uploaded image -->
-    {% if result %}
-    <h3>Result: {{ result }}</h3>
-    {% endif %} {% if filename %}
-    <h4>Uploaded Image:</h4>
-    <img
-      src="{{ url_for('uploaded_file', filename=filename) }}"
-      alt="Uploaded Image"
-      style="max-width: 300px; max-height: 300px"
-    />
-    {% endif %}
+      <div class="result">
+        <!-- Display the result and uploaded image -->
+        {% if result %}
+        <h3>Result: {{ result }}</h3>
+        {% endif %} {% if filename %}
+        <h4>Uploaded Image:</h4>
+        <img
+          src="{{ url_for('uploaded_file', filename=filename) }}"
+          alt="Uploaded Image"
+        />
+        {% endif %}
+      </div>
+    </div>
   </body>
 </html>
