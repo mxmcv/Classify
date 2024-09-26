@@ -9,7 +9,7 @@
 Classify is an **image classifier** designed to determine whether a student is paying attention or not. 
 <br/>
 <br/>
-Built with a convolutional neural network (CNN) using TensorFlow, it was trained on a dataset containing over **2000** images per class, achieving a **90% accuracy** on the validation set. The model uses OpenCV for image preprocessing and is deployed in a **Flask web app**, allowing users to upload images of students and receive real-time predictions about their attention status. 
+Built with a convolutional neural network (CNN) using TensorFlow, it was trained on a dataset containing over **2000** images, achieving a **90% accuracy** on the validation set. The model uses OpenCV for image preprocessing and is deployed in a **Flask web app**, allowing users to upload images of students and receive real-time predictions about their attention status. 
 <br/>
 <br/>
 Classify combines advanced deep learning techniques with a practical, user-friendly interface to help enhance classroom engagement.
